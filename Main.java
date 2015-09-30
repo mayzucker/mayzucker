@@ -7,7 +7,7 @@ public class Main
       
       char ch;
       do{
-         ch = menu();
+         ch = menu();//menu
          System.out.println();
          switch (ch){
             case '1':System.out.print("Input Size ... ");
