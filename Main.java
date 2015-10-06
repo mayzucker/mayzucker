@@ -1,22 +1,21 @@
 import java.util.*;
 public class Main
 {
-   ArrayList data = new ArrayList();
+   static ArrayList data = new ArrayList();
    static Scanner kb = new Scanner(System.in);
    public static void main(String[] args) {
       
       char ch;
       do{
-         ch = menu();//menu
+         ch = menu();
          System.out.println();
          switch (ch){
             case '1':System.out.print("Input Size ... ");
-               generateData(kb.nextInt());
-               System.out.print(size());
+               int size = kb.nextInt();
+               generateData(size);
                break;
             case '2':
-               //System.out.print(data[]);
-               //showList(list);
+               //showData(data[]);
                break;
             case '3':
                //list.removeFirst();
@@ -62,63 +61,7 @@ public class Main
       System.out.print(" Select your choice ... ");
       return kb.next().charAt(0);
    }
-   public static int quickSort(int [] data)
-   {
-      quickSort(data, 0, data.length-1);
-      return 1;
-   }
-   private static void quickSort(int [] a, int left, int right)
-   {
-      int CUTOFF = 3;
-      if(left + CUTOFF <= right)
-      {
-         int pivot = median3(a, left, right);
-         int i = left, j = right - 1;
-         for( ; ; )
-         {
-            while( a[++i] < pivot ) { }
-            while( a[--j] > pivot ) { }
-            if( i < j )
-               swapReferences(a, i, j);
-            else
-               break;
-         }
-         swapReferences(a, i, right - 1);
-         quickSort(a, left, i - 1);
-         quickSort(a, i + 1, right);
-      }
-      else
-         sort(a, left, right);
-   }
-   private static void swapReferences(int [] a, int i, int j)
-   {
-      int tmp = a[i];
-      a[i] = a[j];
-      a[j] = tmp;
-   }
-   private static int median3(int [] a, int left, int right)
-   {
-      int center = (left + right) / 2;
-      if( a[center] < a[left] )
-         swapReferences(a, left, center);
-      if( a[right] < a[left] )
-         swapReferences(a, left, right);
-      if( a[right] < a[center] )
-         swapReferences(a, center, right);
-      swapReferences(a, center, right - 1);
-      return a[right - 1];
-   }
-   private static void sort(int [] a, int left, int right)
-   {
-      for(int p=left+1; p<=right; p++)
-      {
-         int tmp = a[p];
-         int j=p;
-         for(; j>left && tmp < a[j-1]; j--)
-            a[j] = a[j - 1];
-         a[j] = tmp;
-      }
-   }
+      
    public static int [] generateData(int size)
    {
       int tmp[] = new int[size];
@@ -128,6 +71,16 @@ public class Main
       }
       return tmp;
    }
+   public static void showData(int []d)
+   {
+      System.out.println("=======Data in Array=======");
+      for(int i = 0; i < d.length; i++)
+      {
+         System.out.print(d[i]+" ");
+         System.out.println("\t ----- ");
+      }
+      System.out.println("===========================");
+   }
    public static int [] clone(int [] d)
    {
       int tmp2[] = new int[d.length];
@@ -135,14 +88,6 @@ public class Main
          tmp2[i] = d[i];
       return tmp2;
    }
-   public void Display(){
-      System.out.println("=======Data in Stack=======");
-      for(int i = 0; i < data.length; i++)
-      {
-         System.out.print(data[i]+" ");
-         System.out.println("\t ----- ");
-      }
-      System.out.println("===========================");
-   }
+}      
    
-}
+
