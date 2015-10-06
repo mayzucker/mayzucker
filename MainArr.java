@@ -145,6 +145,69 @@ public class MainArr
       }
       System.out.println("===========================");*/
    }
+   public static int bubblesort(int d)
+   {
+      int arr[]={54,26,93,17,77,31,44,55,20};
+      boolean swapped=true;
+      int j=0;
+      int tmp;
+      while (swapped)
+      {
+         swapped = false;
+         j++;
+         for(int i = 0; i < arr.length - j; i++)
+         {
+            if (arr[i] < arr[i + 1])   
+            {
+               tmp = arr[i];
+               arr[i] = arr[i + 1];
+               arr[i + 1] = tmp;
+               swapped = true;
+            }
+         }
+      }
+      return 1;     
+   }
+   public static int InsertionSort(int d)
+   {
+      int data[]={54,26,93,17,77,31,44,55,20};
    
+      for (int i=1; i<data.length; i++)
+      {
+         int temp = data[i];
+         int j;
+         for (j=i; j>0; j--)
+         {
+            if (temp<=data[j-1]) 
+               break;
+            data[j] = data[j-1];
+         }
+         data[j] = temp;
+      }
+      return 1;
+   }  
+   public static int ShellSort(int d)
+   {
+      int data[]={54,26,93,17,77,31,44,55,20};
+      int j, tmp;
+      for(int gap=data.length/3; gap>0; gap/=3)
+      {
+         for(int i=gap; i<data.length; i++)
+         {
+            tmp = data[i];
+            for(j=i; j>=gap ; j-=gap)
+            {
+               
+               if(tmp>data[j-gap])   
+                  data[j] = data[j-gap];
+               else
+                  break;
+            }
+            data[j] = tmp;
+         }
+      }
+      return 1;      
+   }
+}      
    
-}
+
