@@ -1,10 +1,11 @@
 import java.util.*;
-public class Main
+public class Main extends SortEngine
 {
-   static ArrayList data = new ArrayList();
    static Scanner kb = new Scanner(System.in);
    public static void main(String[] args) {
-      
+      final int limit = 10;
+      int []d = new int[limit];
+      int data;
       char ch;
       do{
          ch = menu();
@@ -15,7 +16,8 @@ public class Main
                generateData(size);
                break;
             case '2':
-               //showData(data[]);
+               //clone(d);
+               //showData(d);
                break;
             case '3':
                //list.removeFirst();
@@ -28,13 +30,8 @@ public class Main
                System.out.println("Nothing to remove !!!");
                break;
             case '4':
-               /*if (list.size() != 0) {
-                  list.removeLast();
-                  System.out.println("Removed data is " + list.toString());
-                  showList(list);
-               }
-               else
-                  System.out.println("Nothing to remove !!!");*/
+               //clone(d);
+               //basicSort(d);
                break;
             case '5':
                /*list.clear();
@@ -67,7 +64,7 @@ public class Main
       int tmp[] = new int[size];
       for(int i=0; i<size; i++)
       {
-         tmp[i] = (int)(Math.random()*size);
+         tmp[i] = (int)(Math.random()*100);
       }
       return tmp;
    }

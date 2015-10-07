@@ -2,7 +2,7 @@ public class SortEngine
 {
    public long basicSort(int [] data)
    {
-      int arr[]={54,26,93,17,77,31,44,55,20};
+      int tmp2[] = new int[data.length];
       boolean swapped=true;
       int j=0;
       int tmp;
@@ -10,13 +10,13 @@ public class SortEngine
       {
          swapped = false;
          j++;
-         for(int i = 0; i < arr.length - j; i++)
+         for(int i = 0; i < data.length - j; i++)
          {
-            if (arr[i] < arr[i + 1])   
+            if (data[i] < data[i + 1])   
             {
-               tmp = arr[i];
-               arr[i] = arr[i + 1];
-               arr[i + 1] = tmp;
+               tmp = data[i];
+               data[i] = data[i + 1];
+               data[i + 1] = tmp;
                swapped = true;
             }
          }
