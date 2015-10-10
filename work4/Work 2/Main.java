@@ -13,11 +13,11 @@ public class Main extends SortEngine
          switch (ch){
             case '1':System.out.print("Input Size ... ");
                int size = kb.nextInt();
-               d = generateData(size);
+               generateData(size);
                break;
             case '2':
                //clone(d);
-               showData(d);
+               //showData(d);
                break;
             case '3':
                //list.removeFirst();
@@ -59,13 +59,12 @@ public class Main extends SortEngine
       return kb.next().charAt(0);
    }
       
-   public static int[] generateData(int size)
+   public static int [] generateData(int size)
    {
       int tmp[] = new int[size];
       for(int i=0; i<size; i++)
       {
          tmp[i] = (int)(Math.random()*100);
-         //System.out.println(tmp[i]);// DEBUG_SHOW_RANDOM
       }
       return tmp;
    }
