@@ -3,8 +3,8 @@ public class Main extends SortEngine
 {
    static Scanner kb = new Scanner(System.in);
    public static void main(String[] args) {
-      final int arraysize = 10;
-      int d[] = new int[arraysize];
+      final int limit = 10;
+      int []d = new int[limit];
       int data;
       char ch;
       do{
@@ -13,11 +13,11 @@ public class Main extends SortEngine
          switch (ch){
             case '1':System.out.print("Input Size ... ");
                int size = kb.nextInt();
-               generateData(size);
                d = generateData(size);
                break;
-            case '2': showData(d);
-            
+            case '2':
+               //clone(d);
+               showData(d);
                break;
             case '3':
                //list.removeFirst();
@@ -59,12 +59,13 @@ public class Main extends SortEngine
       return kb.next().charAt(0);
    }
       
-   public static int [] generateData(int size)
+   public static int[] generateData(int size)
    {
       int tmp[] = new int[size];
       for(int i=0; i<size; i++)
       {
-         tmp[i] = (int)Math.random()*size;
+         tmp[i] = (int)(Math.random()*size);
+         //System.out.println(tmp[i]);// DEBUG_SHOW_RANDOM
       }
       return tmp;
    }
@@ -73,17 +74,18 @@ public class Main extends SortEngine
       System.out.println("=======Data in Array=======");
       for(int i = 0; i < d.length; i++)
       {
-         System.out.print(d[i]+" ");
-         System.out.println("\t ----- ");
+         System.out.print(d[i]+"  ");
+         System.out.println("\t===================");
       }
+      System.out.println();
       System.out.println("===========================");
    }
    public static int [] clone(int [] d)
    {
-      int tmp[] = new int[d.length];
-      for(int i=0; i<tmp.length; i++)
-         tmp[i] = d[i];
-      return tmp;
+      int tmp2[] = new int[d.length];
+      for(int i=0; i<tmp2.length; i++)
+         tmp2[i] = d[i];
+      return tmp2;
    }
 }      
    
