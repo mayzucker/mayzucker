@@ -24,30 +24,46 @@ public class Main extends SortEngine
             case '3': 
                tmp2 = clone(d);
                data = tmp2;
+               long startTime = System.currentTimeMillis();
                basicSort(data);
                for(int i = 0; i < data.length; i++)
-               System.out.print(data[i]+" ");
+               {System.out.print(data[i]+" ");}
+               long timeTeken = System.currentTimeMillis() - startTime;
+               System.out.println();
+               System.out.println(timeTeken);
                break;
             case '4': 
                tmp2 = clone(d);
                data = tmp2;
+               long startTime2 = System.currentTimeMillis();
                insertionSort(data);
                for(int j = 0; j < data.length; j++)
-               System.out.print(data[j]+" ");
+               System.out.print(data[j]+" "+"\t");
+               long timeTeken2 = System.currentTimeMillis() - startTime2;
+               System.out.println();
+               System.out.println(timeTeken2);
                break;
             case '5':
                tmp2 = clone(d);
                data = tmp2;
+               long startTime3 = System.currentTimeMillis();
                shellSort(data);
                for(int k = 0; k < data.length; k++)
                System.out.print(data[k]+" ");
+               long timeTeken3 = System.currentTimeMillis() - startTime3;
+               System.out.println();
+               System.out.println(timeTeken3);
                break;
            case '6':
                tmp2 = clone(d);
                data = tmp2;
+               long startTime4 = System.currentTimeMillis();
                quickSort(data);
                for(int l = 0; l < data.length; l++)
                System.out.print(data[l]+" ");
+               long timeTeken4 = System.currentTimeMillis() - startTime4;
+               System.out.println();
+               System.out.println(timeTeken4);
                break;
 
             case '0':
