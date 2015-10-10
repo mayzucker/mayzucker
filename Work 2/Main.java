@@ -3,8 +3,8 @@ public class Main extends SortEngine
 {
    static Scanner kb = new Scanner(System.in);
    public static void main(String[] args) {
-      final int size = 0;
-      int d[] = new int[size];
+      final int arraysize = 10;
+      int d[] = new int[arraysize];
       int data;
       char ch;
       do{
@@ -12,8 +12,9 @@ public class Main extends SortEngine
          System.out.println();
          switch (ch){
             case '1':System.out.print("Input Size ... ");
-               //int size = kb.nextInt();
-               generateData(kb.nextInt());
+               int size = kb.nextInt();
+               generateData(size);
+               d = generateData(size);
                break;
             case '2': showData(d);
             
