@@ -16,7 +16,7 @@ public class Main extends SortEngine
 
                int size = kb.nextInt();
                generateData(size);
-               d = generateData(size);               
+               d = generateData(size);        
                break;
             case '2':
                showData(d);
@@ -24,9 +24,14 @@ public class Main extends SortEngine
             case '3': 
                tmp2 = clone(d);
                data = tmp2;
+               long start = System.currentTimeMillis();
                basicSort(data);
+               long stop = System.currentTimeMillis();
                for(int i = 0; i < data.length; i++)
-               System.out.print(data[i]+" ");
+            	   System.out.print(data[i]+" ");
+               System.out.println("");
+               System.out.println("Taketime : "+ (stop-start)+" ms");
+               //System.out.println("Taketime : "+ stop);
                break;
             case '4': 
                tmp2 = clone(d);
