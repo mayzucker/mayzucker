@@ -3,8 +3,13 @@ public class Main extends SortEngine
 {
    static Scanner kb = new Scanner(System.in);
    public static void main(String[] args) {
+<<<<<<< HEAD
       final int limit = 10;
       int []d = new int[limit];
+=======
+      final int size = 0;
+      int d[] = new int[size];
+>>>>>>> origin/master
       int data;
       char ch;
       do{
@@ -12,8 +17,13 @@ public class Main extends SortEngine
          System.out.println();
          switch (ch){
             case '1':System.out.print("Input Size ... ");
+<<<<<<< HEAD
                int size = kb.nextInt();
                d = generateData(size);
+=======
+               //int size = kb.nextInt();
+               generateData(kb.nextInt());
+>>>>>>> origin/master
                break;
             case '2':
                //clone(d);
