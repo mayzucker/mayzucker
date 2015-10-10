@@ -1,6 +1,6 @@
 public class SortEngine
 {
-   public long basicSort(int [] data)
+   public static int[] basicSort(int []data)
    {
       int tmp2[] = new int[data.length];
       boolean swapped=true;
@@ -12,7 +12,7 @@ public class SortEngine
          j++;
          for(int i = 0; i < data.length - j; i++)
          {
-            if (data[i] < data[i + 1])   
+            if (data[i] > data[i + 1])   
             {
                tmp = data[i];
                data[i] = data[i + 1];
@@ -21,26 +21,28 @@ public class SortEngine
             }
          }
       }
-      return 1;     
+      return tmp2;     
    }
-   public long insertionSort(int [] data)
+   public static int[] insertionSort(int []data)
    {
+      int tmp2[] = new int[data.length];
       for (int i=1; i<data.length; i++)
       {
          int temp = data[i];
          int j;
          for (j=i; j>0; j--)
          {
-            if (temp<=data[j-1]) 
+            if (temp>=data[j-1]) 
                break;
             data[j] = data[j-1];
          }
          data[j] = temp;
       }
-      return 1;
+      return tmp2;
    } 
-   public long shellSort(int [] data)
+   public static int[] shellSort(int []data)
    {
+      int tmp2[] = new int[data.length];
       int j, tmp;
       for(int gap=data.length/3; gap>0; gap/=3)
       {
@@ -50,7 +52,7 @@ public class SortEngine
             for(j=i; j>=gap ; j-=gap)
             {
                
-               if(tmp>data[j-gap])   
+               if(tmp<data[j-gap])   
                   data[j] = data[j-gap];
                else
                   break;
@@ -58,7 +60,7 @@ public class SortEngine
             data[j] = tmp;
          }
       }
-      return 1;      
+      return tmp2;      
    }
    private static void swapReferences(int [] a, int i, int j)
    {
@@ -66,7 +68,7 @@ public class SortEngine
       a[i] = a[j];
       a[j] = tmp;
    }
-   private static int median3(int [] a, int left, int right)
+   private static int median3(int []a, int left, int right)
    {
       int center = (left + right) / 2;
       if( a[center] < a[left] )
@@ -78,7 +80,7 @@ public class SortEngine
       swapReferences(a, center, right - 1);
       return a[right - 1];
    }
-   private static void quickSort(int [] a, int left, int right)
+   private static void quickSort(int []a, int left, int right)
    {
       int CUTOFF = 3;
       if(left + CUTOFF <= right)
@@ -101,7 +103,7 @@ public class SortEngine
       else
          sort(a, left, right);
    }
-   public static int quickSort(int [] data)
+   public static int quickSort(int []data)
    {
       quickSort(data, 0, data.length-1);
       return 1;

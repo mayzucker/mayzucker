@@ -3,50 +3,53 @@ public class Main extends SortEngine
 {
    static Scanner kb = new Scanner(System.in);
    public static void main(String[] args) {
-<<<<<<< HEAD
       final int limit = 10;
       int []d = new int[limit];
-=======
-      final int size = 0;
-      int d[] = new int[size];
->>>>>>> origin/master
-      int data;
+      int []tmp2 = new int[limit];      
+      int data[] = new int[limit];
       char ch;
       do{
          ch = menu();
          System.out.println();
          switch (ch){
             case '1':System.out.print("Input Size ... ");
-<<<<<<< HEAD
+
                int size = kb.nextInt();
-               d = generateData(size);
-=======
-               //int size = kb.nextInt();
-               generateData(kb.nextInt());
->>>>>>> origin/master
+               generateData(size);
+               d = generateData(size);               
                break;
             case '2':
-               //clone(d);
                showData(d);
                break;
-            case '3':
-               //list.removeFirst();
-               //if (list.size() != 0) 
-               {
-                  System.out.println("Removed data is " );
-                  //showList(list);
-               }
-               //else
-               System.out.println("Nothing to remove !!!");
+            case '3': 
+               tmp2 = clone(d);
+               data = tmp2;
+               basicSort(data);
+               for(int i = 0; i < data.length; i++)
+               System.out.print(data[i]+" ");
                break;
-            case '4':
-               //clone(d);
-               //basicSort(d);
+            case '4': 
+               tmp2 = clone(d);
+               data = tmp2;
+               insertionSort(data);
+               for(int j = 0; j < data.length; j++)
+               System.out.print(data[j]+" ");
                break;
             case '5':
-               /*list.clear();
-               System.out.println("All data had removed.");*/
+               tmp2 = clone(d);
+               data = tmp2;
+               shellSort(data);
+               for(int k = 0; k < data.length; k++)
+               System.out.print(data[k]+" ");
                break;
+           case '6':
+               tmp2 = clone(d);
+               data = tmp2;
+               quickSort(data);
+               for(int l = 0; l < data.length; l++)
+               System.out.print(data[l]+" ");
+               break;
+
             case '0':
                break;
             default: System.out.println("\nIncorrect choice !!!");
@@ -62,7 +65,7 @@ public class Main extends SortEngine
       System.out.println("| 3. Basic Sort |");
       System.out.println("| 4. Insert Sort |");
       System.out.println("| 5. Shell Sort |");
-      System.out.println("| 5. Quick Sort |");
+      System.out.println("| 6. Quick Sort |");
       System.out.println("| 0. Exit |");
       System.out.println("+-----------------+");
       System.out.print(" Select your choice ... ");
@@ -90,7 +93,7 @@ public class Main extends SortEngine
       System.out.println();
       System.out.println("===========================");
    }
-   public static int [] clone(int [] d)
+   public static int[] clone(int [] d)
    {
       int tmp2[] = new int[d.length];
       for(int i=0; i<tmp2.length; i++)
